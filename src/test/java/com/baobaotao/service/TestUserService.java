@@ -1,5 +1,6 @@
 package com.baobaotao.service;
 
+import com.baobaotao.domain.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,5 +23,11 @@ public class TestUserService {
         boolean b2 = userService.hasMatchUser("admin", "1111");
         Assert.assertTrue(b1);
         Assert.assertFalse(b2);
+    }
+
+    @Test
+    public void findUserName() {
+        User user = userService.findUserByUserName("admin");
+        Assert.assertEquals(user.getUserName(), "admin");
     }
 }
